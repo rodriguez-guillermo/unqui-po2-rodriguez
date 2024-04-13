@@ -1,33 +1,40 @@
 package ar.edu.unq.po2.tp4;
 
 public class Producto {
-
-	public Producto(String nombre, Double precio, Boolean esParteDelPrograma) {
-		// TODO Auto-generated constructor stub
-	}
-
+	
+	private String nombre;
+	protected Double precio;
+	private Boolean esPrecioCuidado;
+	
 	public Producto(String nombre, Double precio) {
-		// TODO Auto-generated constructor stub
+		this.nombre = nombre;
+		this.precio = precio;
+		this.esPrecioCuidado = false;
+	}
+	
+	public Producto(String nombre, Double precio, Boolean esPrecioCuidado) {
+		this.nombre = nombre;
+		this.precio = precio;
+		this.esPrecioCuidado = esPrecioCuidado;
 	}
 
 	public String getNombre() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return nombre;
 	}
 
 	public Double getPrecio() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return precio;
 	}
 
 	public Boolean esPrecioCuidado() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void aumentarPrecio(Double d) {
-		// TODO Auto-generated method stub
 		
+		return esPrecioCuidado;
 	}
-
+	
+public void aumentarPrecio(Double montoAAumentar) {
+		
+		this.precio += montoAAumentar;
+	}
 }
