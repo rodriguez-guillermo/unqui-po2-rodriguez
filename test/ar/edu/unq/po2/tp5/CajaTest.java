@@ -16,7 +16,7 @@ class CajaTest {
 	private ProductoCooperativo prodCoop1;
 	private ProductoCooperativo prodCoop2;
 	
-	private List<Producto> productosACobrar;
+	private List<IPagable> productosACobrar;
 	
 	private Caja caja1;
 	
@@ -37,7 +37,7 @@ class CajaTest {
 	@Test
 	void testCaja1ListaProductos() {
 		
-		assertEquals(productosACobrar, caja1.getProductos());
+		assertEquals(productosACobrar, caja1.getPagables());
 	}
 	
 	@Test
@@ -77,10 +77,10 @@ class CajaTest {
 	void testCaja1RegistrarProductosSinStock() {
 		
 		Producto productoSinStock = new Producto(85d, 0);
-		List<Producto> productosSinStock = Arrays.asList(productoSinStock);
+		List<IPagable> productosSinStock = Arrays.asList(productoSinStock);
 		Caja cajaNoPuedeRegistrar = new Caja(productosSinStock);
 		
-		assertEquals(productosSinStock, cajaNoPuedeRegistrar.getProductos());
+		assertEquals(productosSinStock, cajaNoPuedeRegistrar.getPagables());
 		
 		//Exception exception = assertThrows(Exception.class, () -> {
 		//	cajaNoPuedeRegistrar.registrarProductos(); // Método que registra el producto

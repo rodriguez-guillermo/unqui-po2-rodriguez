@@ -10,8 +10,6 @@ class ProductoTest {
 	private Producto producto1;
 	private Producto producto2;
 	
-	private Producto productoSinStock = new Producto(85d, 0);
-	
 	@BeforeEach
 	void setUp() {
 		
@@ -40,8 +38,8 @@ class ProductoTest {
 	@Test
 	void testCalcularPrecioFinal() {
 		
-		assertEquals(121d, producto1.calcularPrecioFinal());
-		assertEquals(145.2, producto2.calcularPrecioFinal());
+		assertEquals(121d, producto1.calcularImporte());
+		assertEquals(145.2, producto2.calcularImporte());
 	}
 	
 	@Test
@@ -55,23 +53,6 @@ class ProductoTest {
 	void testRegistrarOK() throws Exception {
 		
 		producto1.registrar();
-		assertEquals(14, producto1.getStock());
-	}
-	
-	@Test
-	void testRegistrarFail() throws Exception {
-		
-		Exception exception = assertThrows(Exception.class, () -> {
-			productoSinStock.registrar();
-        });
-
-        assertEquals("No hay stock suficiente", exception.getMessage());
-	}
-	
-	@Test
-	void testReducirStock() {
-		
-		producto1.reducirStock();
 		assertEquals(14, producto1.getStock());
 	}
 }

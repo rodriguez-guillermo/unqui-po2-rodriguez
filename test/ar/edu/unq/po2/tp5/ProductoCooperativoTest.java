@@ -39,8 +39,8 @@ class ProductoCooperativoTest {
 	@Test
 	void testCalcularPrecioFinal() {
 		
-		assertEquals(55.5d, prodCoop1.calcularPrecioFinal());
-		assertEquals(11.1d, prodCoop2.calcularPrecioFinal());
+		assertEquals(55.5d, prodCoop1.calcularImporte());
+		assertEquals(11.1d, prodCoop2.calcularImporte());
 	}
 	
 	@Test
