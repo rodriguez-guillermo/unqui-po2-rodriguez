@@ -32,7 +32,7 @@ class TeamworkTest {
     teamwork.addEmployee(person5);
     }
     @Test
-    void addEmployee() {
+    void testAddEmployee() {
         teamwork.getEmployees().clear();
 
         teamwork.addEmployee(person1);
@@ -42,7 +42,7 @@ class TeamworkTest {
     }
 
     @Test
-    void getName() {
+    void testGetName() {
         assertEquals("POO2", teamwork.getName());
     }
 
@@ -53,7 +53,7 @@ class TeamworkTest {
     }
 
     @Test
-    void calculateAvgAge() {
+    void testCalculateAvgAge() {
 
         assertEquals(36, person1.calculateAge());
         assertEquals(24, person2.calculateAge());
@@ -64,5 +64,15 @@ class TeamworkTest {
         // (36 + 24 + 17 + 46 + 28) / 5 = 30.2
 
         assertEquals(30.2, teamwork.calculateAvgAge());
+    }
+    
+    @Test
+    void testConstructor() {
+    	
+    	List<Person> listTest = Arrays.asList(person1, person2, person3, person4, person5);
+    	Teamwork dummy = new Teamwork("Dummy", listTest);
+    	
+    	assertEquals("Dummy", dummy.getName());
+    	assertEquals(listTest, dummy.getEmployees());
     }
 }

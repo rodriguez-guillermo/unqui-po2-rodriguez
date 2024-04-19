@@ -39,4 +39,13 @@ public class ProductoPrimeraNecesidadTest {
 	public void testCalculaPrecioVino100PorCientoDeDescuento() {
 		assertEquals(0d, vino100.getPrecio());
 	}
+	
+	@Test
+	public void testConstructor2Param() {
+		
+		ProductoPrimeraNecesidad dummy = new ProductoPrimeraNecesidad("Dummy", 150d);
+		
+		assertEquals(135d, dummy.getPrecio());
+		assertEquals("Dummy", dummy.getNombre());
+	}
 }

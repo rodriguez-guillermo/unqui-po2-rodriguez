@@ -34,4 +34,16 @@ public class SupermercadoTest {
 		supermercado.agregarProducto(detergente);
 		assertEquals(93.9, supermercado.getPrecioTotal());
 	}
+	
+	@Test
+	public void testGetNombre() {
+		
+		assertEquals("Lo de Tito", supermercado.getNombre());
+	}
+	
+	@Test
+	public void testGetDireccion() {
+		
+		assertEquals("Av Zubeldia 801", supermercado.getDireccion());
+	}
 }

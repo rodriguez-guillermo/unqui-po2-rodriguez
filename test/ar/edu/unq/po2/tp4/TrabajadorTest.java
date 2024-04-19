@@ -241,4 +241,18 @@ class TrabajadorTest {
 		
 		assertEquals(2.4d, trabajador6.getImpuestoAPagar());	
 	}
+	
+	@Test
+	void testGetNombre() {
+		
+		assertEquals("Trabajador 1", trabajador1.getNombre());	
+	}
+	
+	@Test
+	void testTrabajadorNuevoNoAddIngreso() {
+		
+		assertEquals(0, trabajadorNuevo.getIngresos().size());	
+		trabajadorNuevo.addIngreso(ingreso1);
+		assertEquals(1, trabajadorNuevo.getIngresos().size());	
+	}
 }
