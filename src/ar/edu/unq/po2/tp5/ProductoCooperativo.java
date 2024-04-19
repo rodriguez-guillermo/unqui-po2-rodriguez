@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public class ProductoCooperativo extends Producto {
+public class ProductoCooperativo extends Producto{
 	
 	private final Double descuentoPorcentaje;
 	
@@ -16,9 +16,9 @@ public class ProductoCooperativo extends Producto {
 	}
 	
 	@Override
-	public Double calcularPrecioFinal() {
+	public Double calcularImporte() {
 		
-		return super.calcularPrecioFinal() - this.calcularDescuento();
+		return super.calcularImporte() - this.calcularDescuento();
 	}
 
 	Double calcularDescuento() {

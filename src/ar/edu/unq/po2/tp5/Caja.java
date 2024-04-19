@@ -4,35 +4,28 @@ import java.util.List;
 
 public class Caja {
 	
-	private List<Producto> productos;
-
+	private List<IPagable> pagables;
 	
-	public Caja(List<Producto> productos) {
+	public Caja(List<IPagable> pagables) {
 		
-		this.productos = productos;
+		this.pagables = pagables;
 	}
 	
-	public List<Producto> getProductos(){
+	public List<IPagable> getPagables(){
 		
-		return this.productos;
+		return this.pagables;
 	}
 	
 	public Double calcularMontoTotalDeCompra() {
 		
-		return this.getProductos().stream()
-				.mapToDouble(producto -> producto.calcularPrecioFinal())
+		return this.getPagables().stream()
+				.mapToDouble(pagable -> pagable.calcularImporte())
 				.sum();
 	}
 	
 	public void registrarProductos() {
 		
-		this.getProductos().stream()
-				.forEach(producto -> {
-					try {
-						producto.registrar();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				});
+		this.getPagables().stream().
+				forEach(pagable -> pagable.registrar());
 	}
 }

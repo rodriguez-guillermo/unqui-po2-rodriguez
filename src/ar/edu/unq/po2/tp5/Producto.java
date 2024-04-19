@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp5;
 
-public class Producto {
+public class Producto implements IPagable{
 
 	private Double precioBase;
 	private Integer stock;
@@ -28,29 +28,19 @@ public class Producto {
 		return this.iva;
 	}
 	
-	// Calcula el monto del precio base + el monto del IVA.
-	public Double calcularPrecioFinal() {	
-		
-		return this.getPrecioBase() + this.calcularIvaProducto();
-	}
-
 	double calcularIvaProducto() {
 		
 		return (this.getPrecioBase() * this.getIva()) / 100;
 	}
 	
-	public void registrar() throws Exception {	
+	public void registrar(){	
 		
-		if (this.getStock() > 0) {
-			this.reducirStock();
-		} else {
-			throw new Exception("No hay stock suficiente");
-		}
+		 this.stock --;
 	}
+
+	@Override
+	public Double calcularImporte() {
 	
-	// Reduce en 1 unidad el stock.
-	Integer reducirStock() {
-		
-		return stock --;
+		return this.getPrecioBase() + this.calcularIvaProducto();
 	}
 }
