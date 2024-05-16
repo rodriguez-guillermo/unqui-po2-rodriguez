@@ -19,7 +19,7 @@ class CajaTest {
 	private List<IPagable> productosACobrar;
 	
 	private Caja caja1;
-	
+		
 	@BeforeEach
 	void setUp() {
 		
@@ -32,6 +32,7 @@ class CajaTest {
 		productosACobrar = Arrays.asList(producto1, producto2, prodCoop1, prodCoop2);
 		
 		caja1 = new Caja(productosACobrar);
+				
 	}
 
 	@Test

@@ -9,7 +9,7 @@ class CounterTest {
 
     private Counter counter;
     @BeforeEach
-    public void setUp() throws Exception {
+    void setUp(){
 
         //Se crea el contador
         counter = new Counter();
